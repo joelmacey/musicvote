@@ -20,8 +20,16 @@
         url: '/form',
         type: 'POST',
         data: {
-          firstName: testForm.firstName.value,
-          lastName: testForm.lastName.value
+          vote1: testForm.vote1.value,
+          vote2: testForm.vote2.value,
+          vote3: testForm.vote3.value,
+          vote4: testForm.vote4.value,
+          vote5: testForm.vote5.value,
+          vote6: testForm.vote6.value,
+          vote7: testForm.vote7.value,
+          vote8: testForm.vote8.value,
+          vote9: testForm.vote9.value,
+          vote10: testForm.vote10.value
         },
         success: postSuccessHandler
       });

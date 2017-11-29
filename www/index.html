@@ -2,31 +2,46 @@
 <html>
     <head> 
         <meta charset="utf-8"> 
-        <title>Express.js example</title>
+        <title>Music</title>
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="stylesheet" type="text/css" href="css/reset.css">
+        <script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
+        <script type="text/javascript" src="js/form-handler.js"></script>
     </head>
     <body class="home"> 
         <article class="textLeft" id="main">
-            <img class="logo" src="images/nodejs-logo.png">
-            <h1>Example Form</h1>
-            <p>Enter some info and then click "Submit"</p>
+            <h1>Music</h1>
+            <p>Enter your votes and then click "Submit"</p>
             <div>
                 <form method="POST" id="testForm">
-                  <label>First name:</label>
-                  <input type="text" name="firstName"><br>
-                  <label>Last name:</label>
-                  <input type="text" name="lastName">
+                  <span><label>Vote 1:</label>
+                  <input type="text" name="vote1"></span><br>
+                  <span><label>Vote 2:</label>
+                  <input type="text" name="vote2"></span><br>
+                  <span><label>Vote 3:</label>
+                  <input type="text" name="vote3"></span><br>
+                  <span><label>Vote 4:</label>
+                  <input type="text" name="vote4"></span><br>
+                  <span><label>Vote 5:</label>
+                  <input type="text" name="vote5"></span><br>
+                  <span><label>Vote 6:</label>
+                  <input type="text" name="vote6"></span><br>
+                  <span><label>Vote 7:</label>
+                  <input type="text" name="vote7"></span><br>
+                  <span><label>Vote 8:</label>
+                  <input type="text" name="vote8"></span><br>
+                  <span><label>Vote 9:</label>
+                  <input type="text" name="vote9"></span><br>
+                  <span><label>Vote 10:</label>
+                  <input type="text" name="vote10"></span>
                   <button type="submit" id="submitButton">Submit</button><img class="ajaxLoader" src="images/ajax-loader.gif">
                 </form>
             </div>
             <section id="post-results-container">
-              <h2>POST DATA</h2>
+              <h2>Your Votes</h2>
               <p>Here is the data you posted:</p>
               <ul class="data"></ul>
             </section>
         </article>
-      <script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
-      <script type="text/javascript" src="js/form-handler.js"></script>
     </body> 
 </html>
