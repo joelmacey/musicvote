@@ -9,8 +9,10 @@ ddb = new AWS.DynamoDB({apiVersion: '2012-10-08'});
 var params = {
   TableName: 'JoelMaceyMusic',
   Item: {
-    'ID' : {N: '001'},
-    'Song' : {S: 'Joel Macey'},
+  	'ID' : {S : '1'},
+    'artist' : {S: 'test1'},
+    'song' : {S: 'test1'},
+
   }
 };
 
@@ -18,7 +20,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true })); 
 app.use(express.static(path.join(__dirname, 'www')));
 app.listen(3000, function () {
-  console.log('Server is running. Point your browser to: http://localhost:3000');
+  console.log('Server is running at http://localhost:3000');
 });
 
 app.post('/form',function(req, res){
@@ -45,10 +47,24 @@ app.post('/form',function(req, res){
 			vote10artist: req.body.vote10artist || null,
 			vote10song: req.body.vote10song || null
 		}));
+		// Posts it in the console
 	console.log('you posted: Vote 1: ' + req.body.vote1song + ' by ' + req.body.vote1artist + ', Vote 2: ' + req.body.vote2song + ' by ' + req.body.vote2artist + ', Vote 3: ' + req.body.vote3song + ' by ' + req.body.vote3artist + ', Vote 4: ' + req.body.vote4song + ' by ' + req.body.vote4artist + ', Vote 5: ' + req.body.vote5song + ' by ' + req.body.vote5artist + ', Vote 6: ' + req.body.vote6song + ' by ' + req.body.vote6artist  + ', Vote 7: ' + req.body.vote7song + ' by ' + req.body.vote7artist + ', Vote 8: ' + req.body.vote8song + ' by ' + req.body.vote8artist + ', Vote 9: ' + req.body.vote9song + ' by ' + req.body.vote9artist + ', Vote 10: ' + req.body.vote10song + ' by ' + req.body.vote10artist);
+	ddb.putItem({
+	    "TableName": "JoelMaceyMusic",
+	    "Item": {
+	        "ID": {"S": '001'},
+	        "Song": {"S": "fancy"}
+	    }
+	}, function(err, result) {
+    	if (err) {
+	    	console.log("Error", err);
+		} else {
+	    	console.log("Success" + toString(result));
+		}
+	});
 });
 
-// Putting it in a DB
+// // Putting it in a DB
 // ddb.putItem(params, function(err, data) {
 //   if (err) {
 //     console.log("Error", err);
