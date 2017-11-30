@@ -10,36 +10,44 @@
     </head>
     <body class="home"> 
         <article class="textLeft" id="main">
-            <h1>Music</h1>
+          <img src="images/triplej.jpg" width="350">
+          <h2>Coolest 100</h2>
             <p>Enter your votes and then click "Submit"</p>
             <div>
                 <form method="POST" id="testForm">
+                  <div>
+                    <p class="formHeading" style="padding-left: 10%">Artist</p>
+                    <p class="formHeading">Song</p>
+                  <div>
                   <span><label>Vote 1:</label>
-                  <input type="text" name="vote1"></span><br>
+                  <input type="text" name="vote1artist" required><input type="text" name="vote1song" required></span><br>
                   <span><label>Vote 2:</label>
-                  <input type="text" name="vote2"></span><br>
+                  <input type="text" name="vote2artist" required><input type="text" name="vote2song" required></span><br>
                   <span><label>Vote 3:</label>
-                  <input type="text" name="vote3"></span><br>
+                  <input type="text" name="vote3artist" required><input type="text" name="vote3song" required></span><br>
                   <span><label>Vote 4:</label>
-                  <input type="text" name="vote4"></span><br>
+                  <input type="text" name="vote4artist"><input type="text" name="vote4song"></span><br>
                   <span><label>Vote 5:</label>
-                  <input type="text" name="vote5"></span><br>
+                  <input type="text" name="vote5artist"><input type="text" name="vote5song"></span><br>
                   <span><label>Vote 6:</label>
-                  <input type="text" name="vote6"></span><br>
+                  <input type="text" name="vote6artist"><input type="text" name="vote6song"></span><br>
                   <span><label>Vote 7:</label>
-                  <input type="text" name="vote7"></span><br>
+                  <input type="text" name="vote7artist"><input type="text" name="vote7song"></span><br>
                   <span><label>Vote 8:</label>
-                  <input type="text" name="vote8"></span><br>
+                  <input type="text" name="vote8artist"><input type="text" name="vote8song"></span><br>
                   <span><label>Vote 9:</label>
-                  <input type="text" name="vote9"></span><br>
+                  <input type="text" name="vote9artist"><input type="text" name="vote9song"></span><br>
                   <span><label>Vote 10:</label>
-                  <input type="text" name="vote10"></span>
+                  <input type="text" name="vote10artist"><input type="text" name="vote10song"></span>
                   <button type="submit" id="submitButton">Submit</button><img class="ajaxLoader" src="images/ajax-loader.gif">
                 </form>
             </div>
             <section id="post-results-container">
-              <h2>Your Votes</h2>
-              <p>Here is the data you posted:</p>
+              <h2>Thanks for Voting!</h2>
+              <span style="display: inline-block;"><svg class="heart" viewBox="0 0 32 29.6">
+  <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+  c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+</svg> <p>Love from Joel Macey</p></span>
               <ul class="data"></ul>
             </section>
         </article>
