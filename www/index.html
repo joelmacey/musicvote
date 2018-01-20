@@ -1,54 +1,84 @@
+<!-- index.html -->
 <!DOCTYPE html> 
 <html>
     <head> 
-        <meta charset="utf-8"> 
         <title>Music</title>
         <link rel="stylesheet" type="text/css" href="css/style.css">
-        <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+        <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
         <script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
-        <script type="text/javascript" src="js/form-handler.js"></script>
-    </head>
-    <body class="home"> 
-        <article class="textLeft" id="main">
-          <img src="images/triplej.jpg" width="350">
-            <p>Enter your votes and then click "Submit"</p>
-            <div>
-                <form method="POST" id="testForm">
-                  <div>
-                    <p class="formHeading" style="padding-left: 10%">Artist</p>
-                    <p class="formHeading">Song</p>
-                  <div>
-                  <span><label>Vote 1:</label>
-                  <input type="text" name="vote1artist" required><input type="text" name="vote1song" required></span><br>
-                  <span><label>Vote 2:</label>
-                  <input type="text" name="vote2artist" required><input type="text" name="vote2song" required></span><br>
-                  <span><label>Vote 3:</label>
-                  <input type="text" name="vote3artist" required><input type="text" name="vote3song" required></span><br>
-                  <span><label>Vote 4:</label>
-                  <input type="text" name="vote4artist"><input type="text" name="vote4song"></span><br>
-                  <span><label>Vote 5:</label>
-                  <input type="text" name="vote5artist"><input type="text" name="vote5song"></span><br>
-                  <span><label>Vote 6:</label>
-                  <input type="text" name="vote6artist"><input type="text" name="vote6song"></span><br>
-                  <span><label>Vote 7:</label>
-                  <input type="text" name="vote7artist"><input type="text" name="vote7song"></span><br>
-                  <span><label>Vote 8:</label>
-                  <input type="text" name="vote8artist"><input type="text" name="vote8song"></span><br>
-                  <span><label>Vote 9:</label>
-                  <input type="text" name="vote9artist"><input type="text" name="vote9song"></span><br>
-                  <span><label>Vote 10:</label>
-                  <input type="text" name="vote10artist"><input type="text" name="vote10song"></span>
-                  <button type="submit" id="submitButton">Submit</button><img class="ajaxLoader" src="images/ajax-loader.gif">
-                </form>
-            </div>
-            <section id="post-results-container">
-              <h2>Thanks for Voting!</h2>
-              <span style="display: inline-block;"><svg class="heart" viewBox="0 0 32 29.6">
-  <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
-  c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
-</svg> <p>Love from Joel Macey</p></span>
-              <ul class="data"></ul>
-            </section>
-        </article>
+        <!-- <script type="text/javascript" src="js/form-handler.js"></script> -->
+        </head>
+    <body>
+    	<div id="wrapper">
+	    	<div id="header">
+			    <img src="images/triplej.jpg" width="350">
+			    <p>Enter your votes for <b>2017</b> and then click "Submit"</p>
+		    </div>
+	    	<form method="POST">
+	    		<div>
+                <p class="formHeading" style="padding-left: 10%">Song</p>
+                <p class="formHeading">Artist</p>
+        	<div>
+		    <span><label> #1 Vote:</label><input type="text" id="vote1song"><input type="text" id="vote1artist"></span><br>
+				<span><label>#2 Vote:</label><input type="text" id="vote2song"><input type="text" id="vote2artist"></span><br>
+				<span><label>#3 Vote:</label><input type="text" id="vote3song"><input type="text" id="vote3artist"></span><br>
+				<span><label>#4 Vote:</label>
+				<input type="text" id="vote4song"><input type="text" id="vote4artist"></span><br>
+				<span><label>#5 Vote:</label>
+				<input type="text" id="vote5song"><input type="text" id="vote5artist"></span><br>
+				<span><label>#6 Vote:</label>
+				<input type="text" id="vote6song"><input type="text" id="vote6artist"></span><br>
+				<span><label>#7 Vote:</label>
+				<input type="text" id="vote7song"><input type="text" id="vote7artist"></span><br>
+				<span><label>#8 Vote:</label>
+				<input type="text" id="vote8song"><input type="text" id="vote8artist"></span><br>
+				<span><label>#9 Vote:</label>
+				<input type="text" id="vote9song"><input type="text" id="vote9artist"></span><br>
+				<span><label>#10 Vote:</label>
+				<input type="text" id="vote10song"><input type="text" id="vote10artist"></span>
+				<button type="submit" id="submitButton">Submit</button>
+				<!-- <img class="ajaxLoader" src="images/ajax-loader.gif"> -->
+			</form>
+			<script type="text/javascript">
+				var API_URL="https://h6dpn6y8q0.execute-api.ap-southeast-2.amazonaws.com/prod/form";
+				$('#submitButton').on('click', function(){
+					$("#submitButton").attr("disabled", true);
+				  $.ajax({
+				    type: 'POST',
+				    url: API_URL,
+				    contentType: "application/json",
+				    success: $('#entries').append('<h2>Thanks for Voting!</h2>             <span style="display: inline-block;"><svg class="heart" viewBox="0 0 32 29.6"><path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/></svg> <p>Love from Joel Macey</p></span>'),
+				    data: JSON.stringify({
+				      'vote1artist': $('#vote1artist').val(),
+				      'vote1song': $('#vote1song').val(),
+				      'vote2artist': $('#vote2artist').val(),
+				      'vote2song': $('#vote2song').val(),
+				      'vote3artist': $('#vote3artist').val(),
+				      'vote3song': $('#vote3song').val(),
+				      'vote4artist': $('#vote4artist').val(),
+				      'vote4song': $('#vote4song').val(),
+				      'vote5artist': $('#vote5artist').val(),
+				      'vote5song': $('#vote5song').val(),
+				      'vote6artist': $('#vote6artist').val(),
+				      'vote6song': $('#vote6song').val(),
+				      'vote7artist': $('#vote7artist').val(),
+				      'vote7song': $('#vote7song').val(),
+				      'vote8artist': $('#vote8artist').val(),
+				      'vote8song': $('#vote8song').val(),
+				      'vote9artist': $('#vote9artist').val(),
+				      'vote9song': $('#vote9song').val(),
+				      'vote10artist': $('#vote10artist').val(),
+				      'vote10song': $('#vote10song').val()
+				    })   
+				  });
+				  return false;
+
+				});
+				</script>
+	            <div id="entries">
+	            	
+		        <!-- <ul class="data"></ul> -->
+	            </div>
+	        </div>
     </body> 
 </html>

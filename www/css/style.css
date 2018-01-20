@@ -1,98 +1,57 @@
 body {
    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
    font-weight: 300;
-	/*background-image: url("/images/dope4.gif");*/
+	background-image: url("../images/wallpaper2.jpg");
+	background-size: 1000px 1000px ;
 	/*color: white;*/
+	margin: 0px ;
 }
-
-.home article{
-	position: relative;
-	width: auto;
-	padding: 20px;
-	background-color: #ededed;
-	border-radius: 5px;
-	text-align: center;
-	-webkit-box-shadow: 10px 10px 43px -4px rgba(133,126,133,1);
-	-moz-box-shadow: 10px 10px 43px -4px rgba(133,126,133,1);
-	box-shadow: 10px 10px 43px -4px rgba(133,126,133,1);
-	z-index: 1;
+#wrapper {
+   z-index: 1;
+   background-color: #ededed;
+   margin: 0px 10%;
+}
+@media screen and (max-width: 700px) {	
+	#wrapper {
+		margin: 0px 10%;
+    }
+    #wrapper form p {
+    	font-size: 40px;
+    	margin: 0 14%;
+    }
+    #wrapper form label {
+		font-size: 45px;
+    }
+    #wrapper form  button {
+    	left: 30%;
+    	font-size: 40px;
+    }
+    #header p {
+    	font-size: 40px;
+    }
+    img {
+    	width:650px;
+    }
 
 }
-
-.home h1, .home h2, .home h3 .home h4 .home h5{
-	margin: 20px 0;
-}
-
-.home h1{
-	font-size: 5.9vw;
-	color: red;
-}
-
-.home h2{
-	font-size: 2.9vw;
-	color: red;
-}
-
-.home nav{
-	position: absolute;
-	top: 10px;
-	right: 10px;
-	padding: 10px;
-	background-color: #002366;
-}
-
-.home nav a {
-	margin-left: 10px;
-	color: #fff;
-	font-weight: bold;
-}
-
-.home p, .home li {
-	font-size: 22px;
-}
-.home p {
-	margin-top: 30px;
-}
-
-.textLeft{
-	text-align: left;
-}
-
-.logo{
-	display: block;
-	width: 20%;
-	margin: 20px auto;
-}
-
-.small {
-	width: 20%;
-}
-
-.floatLeft {
-	float: left;
-	margin: 12px 12px 0 0;
-}
-
-#main{
-	padding: 20px;
-}
-
 form {
 	text-align: left;
 }
-
-#testForm {
-	margin-top: 40px;
+.formHeading{
+	display: inline-block;
+	font-size: 22px;
+	margin: 0 18%;
+	font-weight: bold;
 }
-
 input, label, button{
 	display: block;
-	margin-top: 20px;
+	margin: 15px 5px 0px;
 	font-size: 22px;
 }
 
 label{
 	font-weight: bold;
+	text-align: center;
 	width: 8%;
 	display: inline-block;
 	margin-right: 20px !important;
@@ -108,23 +67,29 @@ input[type="text"]{
     padding: 12px 16px;
     border-radius: 8px;
     font-size: 17px;
-    width: 40%;
+    width: 38%;
     background: #fff;
 }
-
-#post-results-container {
+#header {
 	text-align: center;
-	display: none;
+	font-size: 20px;
+}
+
+#entries {
+	text-align: center;
+	display: block;
 	clear: both;
-	margin-top: 20px;
+	/*margin-top: 20px;*/
 	padding: 20px;
 	border-radius: 5px;
-	/* Chrome, Safari, Opera */
+}
+#entries h2 {
 	-webkit-animation: rainbow 1s infinite; 
 	/* Internet Explorer */
 	-ms-animation: rainbow 1s infinite;
 	/* Standar Syntax */
 	animation: rainbow 1s infinite; 
+
 }
 /* Chrome, Safari, Opera */
 @-webkit-keyframes rainbow{
@@ -151,24 +116,11 @@ input[type="text"]{
 	100%{color: orange;}	
 }
 
-#post-results-container .data {
-	margin-top: 20px;
-}
-
-#post-results-container .data li{
-	margin-top: 20px;
-}
-
-#post-results-container .data b{
-	font-weight: bold;
-	margin-right: 10px;
-}
-
 #submitButton{
 	display: inline-block;
 	padding: 11px 16%;
 	position: relative;
-	left:33%;
+	left:35%;
     background: red;
     border-radius: 8px;
     font-size: 16px;
@@ -178,28 +130,6 @@ input[type="text"]{
     cursor: pointer;
     font-weight: bold !important;
     margin: 20px 0;
-}
-
-.ajaxLoader{
-	display: none;
-	margin-left: 10px;
-    margin: 20px 48%;
-}
-
-.nodeLogo {
-	width: 150px2
-}
-
-@media screen and (max-width : 568px) {
-	nav{
-		position: static;
-	}
-}
-
-.formHeading{
-	display: inline-block;
-	margin: 0 19%;
-	font-weight: bold;
 }
 .heart {
   fill: red;
